@@ -845,45 +845,47 @@
         }
     }
 
-    function toggleBattleTrait(element) {
-        var details = element.nextElementSibling;
-        if (details.style.display === "block") {
-            details.style.display = "none";
-        } else {
-            details.style.display = "block";
-        }
+function toggleBattleTrait(element) {
+    var details = element.nextElementSibling; // Ensuring that the next sibling is indeed the detail container.
+    while (details && !details.classList.contains('battle-trait-details')) {
+        details = details.nextElementSibling; // This loop ensures that you skip any non-detail elements mistakenly caught.
     }
+    if (details) {
+        details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+}
     
     document.addEventListener('DOMContentLoaded', () => {
         const selectedTraits = {};
 
-        document.querySelectorAll('.battle-trait-checkbox').forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const detailContainer = checkbox.closest('.tier').querySelector('.battle-trait-details');
-                const traitName = checkbox.nextElementSibling.textContent.trim();
-                const tierClass = checkbox.closest('.tier').classList[1]; // e.g., "incus-tier"
-                const inGameEffectText = detailContainer.querySelectorAll('p')[detailContainer.querySelectorAll('p').length - 1].textContent.trim(); // Assuming the in-game effect is the last paragraph
+document.querySelectorAll('.battle-trait-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        const traitName = checkbox.nextElementSibling.textContent.trim();
+        const detailContainer = checkbox.parentNode.nextElementSibling; // Assuming the label and the corresponding details div are siblings
+        const tierClass = checkbox.closest('.tier').classList[1];
+        const inGameEffectText = detailContainer.querySelectorAll('p')[detailContainer.querySelectorAll('p').length - 1].textContent.trim();
 
-                if (!selectedTraits[tierClass]) {
-                    selectedTraits[tierClass] = [];
-                }
+        if (!selectedTraits[tierClass]) {
+            selectedTraits[tierClass] = [];
+        }
 
-                if (checkbox.checked) {
-                    selectedTraits[tierClass].push('<strong>' + traitName + '</strong>: ' + inGameEffectText); // Wrap trait name with <strong> tags
-                } else {
-                    const index = selectedTraits[tierClass].indexOf('<strong>' + traitName + '</strong>: ' + inGameEffectText);
-                    if (index !== -1) {
-                        selectedTraits[tierClass].splice(index, 1);
-                    }
-                }
+        if (checkbox.checked) {
+            selectedTraits[tierClass].push('<strong>' + traitName + '</strong>: ' + inGameEffectText);
+        } else {
+            const index = selectedTraits[tierClass].indexOf('<strong>' + traitName + '</strong>: ' + inGameEffectText);
+            if (index !== -1) {
+                selectedTraits[tierClass].splice(index, 1);
+            }
+        }
 
-                generateBenefitsTable();
-            });
-        });
+        generateBenefitsTable();
+    });
+});
+
 
         function generateBenefitsTable() {
             const tableContainer = document.getElementById('benefitsTable');
-            tableContainer.innerHTML = ''; // Clear previous table
+            tableContainer.innerHTML = ''; 
             
             const table = document.createElement('table');
             table.style.width = '100%';
@@ -891,8 +893,8 @@
             
             let html = '<tr><th>Tier</th><th>Selected Traits and Effects</th></tr>';
             Object.keys(selectedTraits).forEach(tier => {
-                const capitalizedTierName = tier.replace(/\b\w/g, char => char.toUpperCase()); // Capitalize the first letter of each word
-                const selectedTraitsList = selectedTraits[tier].join('<br><br>'); // Add line breaks between traits
+                const capitalizedTierName = tier.replace(/\b\w/g, char => char.toUpperCase()); 
+                const selectedTraitsList = selectedTraits[tier].join('<br><br>'); 
                 html += `<tr><td><strong>${capitalizedTierName.replace(/\-/g, ' ').replace('Tier', 'Tier ')}</strong></td><td>${selectedTraitsList}</td></tr>`; // Formatting tier class for display
             });
 
