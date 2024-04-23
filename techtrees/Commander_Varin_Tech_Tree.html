@@ -1,0 +1,739 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Commander Varin Tech Tree</title>
+        <style>
+            body {
+                font-family: Roboto, sans-serif;
+                margin: 20px;
+                background-color: #f0f0f0;
+            }
+            .branch-container {
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                box-shadow: 0 0 5px rgba(0,0,0,0.2);
+                cursor: pointer; /* Added cursor pointer */
+            }
+            .light { background-color: #ccffcc; }
+            .incus { background-color: #ccffcc; }
+            .heavy { background-color: #ffcccc; }
+            .zeal { background-color: #ccffff; }
+            .ardor { background-color: #ffccff; }
+            .building { background-color: #0177a7; }
+            .tier-container {
+                padding-left: 20px;
+            }
+            .tier {
+                margin: 10px 0;
+                padding-left: 20px;
+                border-left: 2px solid #ccc;
+            }
+            .battle-trait {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                margin-bottom: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .battle-trait input[type="checkbox"] {
+                margin-right: 10px;
+            }
+            .battle-trait-details {
+                padding: 10px;
+                background-color: #f0f0f0;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                display: none; /* Initially hidden */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Commander Tech Tree - Commander Varin</h1>
+
+
+
+
+        </br>
+    </br>
+    </br>
+    <h2>Tech Tree Rules</h2>
+    <ul>
+        <li>Pick one of two paths of the tech tree.</li>
+        <li>At every tier you can select one of two possible abilities.</li>
+        <li><b>Click on each branch and tier to see more details.</b></li>
+        <li><b>Tier not responding? Try again and pay your respects to the Machine God!</b></li>
+    </ul>
+    </br>   
+    <!-- Light Path -->
+    <div class="branch-container light" onclick="toggleDetails('light-details')"><h3>Light Path</h3></div>
+    <div id="light-details" class="details">
+        <!-- Tier 1 -->
+        <div class="tier-container">
+            <div class="tier light-tier"> 
+                <h2>Tier 1</h2>
+                <!-- Battle Trait 1 -->
+                <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="light-trait1" name="light-tier1" class="battle-trait-checkbox">
+                    <b>Organised Firing Lines</b>
+                </label>
+                <div id="light-trait1-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>What they lack in firepower, they make up for in volume</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>[infantry] and [mounted] units with this upgrade may add 4” to ranged weapons in a turn in which they Remained Stationary.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Tier 2 -->
+        <div class="tier-container">
+            <div class="tier light-tier"> 
+                <h2>Tier 2</h2>
+                <!-- Battle Trait 1 -->
+                <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="light-trait3" name="light-tier2" class="battle-trait-checkbox">
+                    <b>In life, honor. In death,glory</b>
+                </label>
+                <div id="light-trait3-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Infantrymen and -women often serve shortly on the front, though every round fired is one step to victory.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>When an [infantry] or [mounted] model from your army is slain by a ranged attack, roll a d6. On a 6+ they may shoot with a ballistic skill of 5+.
+                    </br>
+                    </br>
+                    </br>
+                    <b>Restrictions:</b>
+                    </br>
+                    You may not use attacks with the [hazardous] special rule.</br>
+                    </br>
+                    </br>
+                    <b>Upgrade Path:</b>
+                    </br>
+                    Upgraded from 'Organised Firing Lines'.</p>
+                </div>
+            </div>
+        </div>
+                <!-- Battle Trait 2 -->
+                <div class="tier-container">
+                <div class="tier light-tier"> 
+                <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="light-trait4" name="light-tier2" class="battle-trait-checkbox">
+                    <b>Wall of Flesh</b>
+                </label>
+                <div id="light-trait4-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>It takes heroes to hold the line in the face of a heretic charge. To lose such heroes enrages their comrades in arms.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>During the combat phase, if a unit is above half strength, add 1 the weapon skills of melee weapons.
+                    </br>
+                    </br>
+                    <b>Upgrade Path:</b>
+                    </br>
+                    Upgraded from 'Organised Firing Lines'.</p>
+                </div>
+            </div>
+        </div>
+       <!-- Tier 3 -->
+    <div class="tier-container">
+        <div class="tier light-tier">
+            <h2>Tier 3</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait5" name="light-tier3" class="battle-trait-checkbox">
+                <b>Certified Marksmen</b>
+            </label>
+                <div id="light-trait5-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Rigorous training is a luxury rarely given to those whose home is the battlefield, though experience is a masterful teacher.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>[infantry] and [mounted] units from your army with this tech may reroll a single hit roll and a single wound roll each turn.</p>
+                </div>
+             </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier light-tier"> 
+            <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait6" name="light-tier3" class="battle-trait-checkbox">
+                <b>Balls of plasteel</b>
+            </label>
+                <div id="light-trait6-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>In the face of mass casualties, it takes a certain kind of madness to stand and fight twice as hard.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>If a unit is below half strength, add 1 to the attacks characteristic of melee weapons.</p>
+                    </br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tier 4 -->
+    <div class="tier-container">
+        <div class="tier light-tier"> 
+            <h2>Tier 4</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait7" name="light-tier4" class="battle-trait-checkbox">
+                <b>Weak-Point Targeting</b>
+            </label>
+                <div id="light-trait7-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Even weak weapons may punch above their weight when firing upon the weaker points of enemy armor.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Ranged weapons for your [Infantry] and [mounted] units gain the [anti-infantry 4+] keyword. If they have the [devastating wounds] keyword, they lose this keyword.
+                    </br>
+                    </br>
+                    <b>Upgrade Path:</b>
+                    </br>
+                    Upgraded from 'Certified Marksmen'.
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier light-tier">
+            <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait8" name="light-tier4" class="battle-trait-checkbox">
+                <b>Heavy Support Weapon</b>
+            </label>
+                <div id="incus-trait8-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Infantry on the move may lack the firepower to take on heavier targets. Specialists fill this role instead.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>When selecting this tech, you may deploy a single Imperial Guard heavy weapons squad with a loadout to your liking.
+                    </br>
+                    </br>
+                    <b>Upgrade Path:</b>
+                    </br>
+                    Upgraded from 'Certified Marksmen'.
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 3 -->
+            <div class="tier-container">
+            <div class="tier light-tier">
+            <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait9" name="light-tier4" class="battle-trait-checkbox">
+                <b>Catachan Steel Bayonets</b>
+            </label>
+                <div id="incus-trait9-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>No weapons are quite as sharp as the fire- forged and battle-tested Catachan blades.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>In a turn when an [infantry] or [mounted] unit from your army charged, melee weapons they are equipped with gain the [lethal hits] and [sustained hits 1] keywords.
+                    </br>
+                    </br>
+                    <b>Upgrade Path:</b>
+                    </br>
+                    Upgraded from 'Balls of Plasteel'.
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 4 -->
+            <div class="tier-container">
+            <div class="tier light-tier">
+            <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait10" name="light-tier4" class="battle-trait-checkbox">
+                <b>Twice as Fast, Thrice as Hard! <i>(title of my s*x tape)</i></b>
+            </label>
+                <div id="incus-trait8-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>It takes a good officer to spur his men into a frenzy, though a spurred solider is a fearsome foe</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Each character in your army gains the following ability: <i>“Once per battle, during the charge phase, you may reroll the charge roll for this character’s unit, and add 3” to the charge roll”</i>
+                    </br>
+                    </br>
+                    <b>Upgrade Path:</b>
+                    </br>
+                    Upgraded from 'Balls of Plasteel'.
+            </div>
+            </div>
+            </div>
+
+    <!-- Tier 5 -->
+    <div class="tier-container">
+        <div class="tier light-tier"> 
+            <h2>Tier 5</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait11" name="light-tier5" class="battle-trait-checkbox">
+                <b>Shock Troop Deployment Tactics</b>
+            </label>
+                <div id="light-trait11-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>When facing the adversary on the battlefield, taking key objectives may be the difference between victory or defeat.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Ranged weapons equipped by [Infantry] and [mounted] units from your army gain the [assault] keyword. When advancing units with this tech, do not roll a d6. They may advance up to 6” instead.</p>
+                    </br>
+                    </br>
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier light-tier"> 
+            <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait12" name="light-tier5" class="battle-trait-checkbox">
+                <b>Field Ordnance Deployment</b>
+            </label>
+                <div id="light-trait12-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>There are times when heavy firepower still is relative. In such cases, heavier is always a viable option.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>When choosing this tech, you may deploy an Imperial Guard heavy mortar unit or an Imperial Guard thudd gun unit.</p>
+                    </br>
+                    </br>
+
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 3 -->
+            <div class="tier-container">
+            <div class="tier light-tier"> 
+            <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait13" name="light-tier5" class="battle-trait-checkbox">
+                <b>Sanctified Combat Stims</b>
+            </label>
+                <div id="light-trait13-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Often used by traitors and scum, stims are seen as a liability … until the local hospitaller signs off on them of course.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Units with this tech may increase the strength and AP of their melee weapons by 1. This stacks with any other abilities the unit may have.</p>
+                    </br>
+                    </br>
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 4 -->
+            <div class="tier-container">
+            <div class="tier light-tier"> 
+            <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait14" name="light-tier5" class="battle-trait-checkbox">
+                <b>Auramite Bayonet Lugs</b>
+            </label>
+                <div id="light-trait14-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>There is no weapon more reliable than the humble bayonet, and no metal holier than auramite. To combine them is to put the Emperor’s power in an infantryman’s hands.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>[Infantry] and [mounted] units in your army gain the following ability: <i>“During the combat phase, when this unit has charged, roll 1 d6 for every model in this unit. For each 5+, the enemy receives 1 mortal wound. Add +1 to this roll if the enemy unit size is bigger than or equal to your unit size”</i> </p>
+                    </br>
+                    </br>
+            </div>
+            </div>
+            </div>
+
+    <!-- Tier 6 -->
+    <div class="tier-container">
+        <div class="tier light-tier"> 
+            <h2>Tier 6</h2>
+            <!-- FINAL BATTLE TRAIT -->
+            <label class="battle-trait light" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait15" name="light-tier6" class="battle-trait-checkbox">
+                <b>The Emperor's Immortal</b>
+            </label>
+                <div id="light-trait15-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>There are stories of ancient Terra, where ancient emperors where flanked by immortal men, whose might and bravery surpassed all.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>[Infantry] and [mounted] units from your army can only be wounded on a 3+. They also gain a 'feel no pain 5+', or increase their feel no pain rolls by 1 if they already have this ability.</p>
+            </br>
+            </br>
+            </div>
+        </div>
+    </div>
+
+    </br>
+    <!-- Heavy Path -->
+    <div class="branch-container heavy" onclick="toggleDetails('heavy-details')"><h3>Heavy Path</h3></div>
+    <div id="heavy-details" class="details">
+        <!-- Tier 1 -->
+        <div class="tier-container">
+            <div class="tier heavy-tier"> 
+                <h2>Tier 1</h2>
+                <!-- Battle Trait 1 -->
+                <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="heavy-trait1" name="heavy-tier1" class="battle-trait-checkbox">
+                    <b>Hardened Suspension</b>
+                </label>
+                <div id="light-trait1-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Heavy vehicles traverse rough paths, often covered in enemies dead and injured</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Increase the armour penetration characteristic of a [vehicle] unit’s melee attack by 1.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Tier 2 -->
+        <div class="tier-container">
+            <div class="tier heavy-tier"> 
+                <h2>Tier 2</h2>
+                <!-- Battle Trait 1 -->
+                <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="heavy-trait3" name="heavy-tier2" class="battle-trait-checkbox">
+                    <b>Orbital Auspex Scan</b>
+                </label>
+                <div id="heavy-trait3-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Battles fought on the ground are often won in orbit, where no hidey hole is safe from prying scanners and trained eyes</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>During the first battle round, weapons with the [indirect fire] special rule ignore the penalty to AP when firing indirectly.
+                    </br>
+                    </br>
+                    <b>Upgrade Path:</b>
+                    </br>
+                    Upgraded from 'Hardened Suspension'.</p>
+                </div>
+            </div>
+        </div>
+                <!-- Battle Trait 2 -->
+                <div class="tier-container">
+                <div class="tier heavy-tier"> 
+                <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="heavy-trait4" name="heavy-tier2" class="battle-trait-checkbox">
+                    <b>Blast-Resistant Sighting Systems</b>
+                </label>
+                <div id="heavy-trait4-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>On a rolling mass of impenetrable plasteel and indomitable auramite, sensitive systems are a marksman’s white whale.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>When a [vehicle] unit from your army is damaged to the point of being ‘bracketed’, its main weapon does not suffer the -1 to hit penalty.
+                    </br>
+                    </br>
+                    <b>Upgrade Path:</b>
+                    </br>
+                    Upgraded from 'Hardened Suspension'. </p>
+                </div>
+            </div>
+        </div>
+       <!-- Tier 3 -->
+    <div class="tier-container">
+        <div class="tier heavy-tier">
+            <h2>Tier 3</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="heavy-trait5" name="heavy-tier3" class="battle-trait-checkbox">
+                <b>Phosphorous Warheads</b>
+            </label>
+                <div id="heavy-trait5-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>There are many ways to load an artillery shell, though few provide a show quite like burning retribution</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>[indirect fire] weapons in your army can use this special rule once per game. Add the [ignores cover] and [anti-infantry 3+] special rule for that shooting phase before declaring attacks.</p>
+                </div>
+             </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier heavy-tier"> 
+            <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait6" name="heavy-tier3" class="battle-trait-checkbox">
+                <b>Assistant Gunner Training</b>
+            </label>
+                <div id="heavy-trait6-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>A tank crew is only as powerful as its weakest link. Young crewmen are often thoroughly tested to reinforce their resolve.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>When an enemy unit is hit by a sponson, hull- or pintle-mounted weapon, you may reroll hit rolls of 1 for the main weapon of your [vehicle].</p>
+                    </br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tier 4 -->
+    <div class="tier-container">
+        <div class="tier heavy-tier"> 
+            <h2>Tier 4</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="heavy-trait7" name="heavy-tier4" class="battle-trait-checkbox">
+                <b>Weighted Camouflage Netting</b>
+            </label>
+                <div id="heavy-trait7-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>There’s a great risk in being a stationary target. The best ways to avoid being fired upon is simply not to get spotted.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Units with [indirect fire] weapons from your army gain the [stealth] special rule. 
+                    </br>
+                    </br>
+                    <b>Upgrade Path:</b>
+                    </br>
+                    Upgraded from 'Phosphorous Warheads'.
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier heavy-tier">
+            <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="heavy-trait8" name="heavy-tier4" class="battle-trait-checkbox">
+                <b>High-Yield Explosive</b>
+            </label>
+                <div id="heavy-trait8-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>In the chorus of a battlefield, the thundering roar of artillery means death and destruction. The louder the men can make it roar, the happier they are.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>When rolling the dice to determine the amount of attacks on an [indirect fire] weapon, a roll of 1 or 2 count as 3.
+                    </br>
+                    </br>
+                    <b>Upgrade Path:</b>
+                    </br>
+                    Upgraded from 'Phosphorous Warheads'.
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 3 -->
+            <div class="tier-container">
+            <div class="tier heavy-tier">
+            <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="heavy-trait9" name="heavy-tier4" class="battle-trait-checkbox">
+                <b>High-Speed Stabilisers</b>
+            </label>
+                <div id="heavy-trait9-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Tanks are often slow rumbling monsters. Any commander mad enough to drive at high speeds is sure to confuse their adersary.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Choose one weapon profile on any [vehicle] unit in your army. That weapon profile gains the [assault] keyword.
+                    </br>
+                    </br>
+                    <b>Upgrade Path:</b>
+                    </br>
+                    Upgraded from 'Assistant Gunner Training'.
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 4 -->
+            <div class="tier-container">
+            <div class="tier heavy-tier">
+            <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="heavy-trait10" name="heavy-tier4" class="battle-trait-checkbox">
+                <b>Spaced Reactive Armor</i></b>
+            </label>
+                <div id="heavy-trait8-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>When engaging other tanks, it is of the highest importance to equip adequate protection.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>[Vehicle] units in your army gain a -1 to wound and a 6+ invulnerable save.</i>
+                    </br>
+                    </br>
+                    <b>Upgrade Path:</b>
+                    </br>
+                    Upgraded from 'Assistant Gunner Training'.
+            </div>
+            </div>
+            </div>
+
+    <!-- Tier 5 -->
+    <div class="tier-container">
+        <div class="tier heavy-tier"> 
+            <h2>Tier 5</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="light-trait11" name="heavy-tier5" class="battle-trait-checkbox">
+                <b>Sandbagged Mortar Pits</b>
+            </label>
+                <div id="heavy-trait11-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Even in an open field, a clever commander can deploy artillery pieces with relative safety. Many men may die to allow the Emperor’s divine touch to rain down from above.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Units equipped with [indirect fire] weapons have a 5+ invulnerable save as long as they have not moved this battle.</p>
+                    </br>
+                    </br>
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier heavy-tier"> 
+            <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="heavy-trait12" name="heavy-tier5" class="battle-trait-checkbox">
+                <b>Refined Prometheum Propellant</b>
+            </label>
+                <div id="heavy-trait12-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Though artillery is the pinnacle of ranged warfare, there are always ways to fire upon even further targets.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>If a unit with an [indirect fire] weapon from your army has Remained Stationary, add half of the weapon’s range characteristic to the range of that weapon (E.G. 48” + 24”)</p>
+                    </br>
+                    </br>
+
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 3 -->
+            <div class="tier-container">
+            <div class="tier heavy-tier"> 
+            <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="heavy-trait13" name="heavy-tier5" class="battle-trait-checkbox">
+                <b>Rubbed-Coated Roadwheels</b>
+            </label>
+                <div id="heavy-trait13-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Some officers prefer to send infantry first into the fray to fill the gap with bodies and bullets. The smart officer sends in an armored spearhead.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>[Vehicle] units from your army that moved during this turn count as having Remained Stationary. Units embarked in [transport] units may still disembark, though no longer charge (regardless of any other rules like assault ramps)</p>
+                    </br>
+                    </br>
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 4 -->
+            <div class="tier-container">
+            <div class="tier heavy-tier"> 
+            <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="heavy-trait14" name="heavy-tier5" class="battle-trait-checkbox">
+                <b>Reinforced Pintle Mount</b>
+            </label>
+                <div id="heavy-trait14-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>A good tank commander not only knows when to order is men to fire, he knows when to aid in taking out the adversaries threatening his crew.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>If a [vehicle] unit in your army can take a pintle-mounted heavy stubber or storm bolter, you may replace it with one of the following instead and you may fire it twice per turn:
+                        <ul>
+                        <li>plasma gun</li>
+                        <li>hotshot volleygun</li>
+                        <li>flamer</li>
+                        <li>grenade launcher</li>
+                        <li>grav-gun</li>
+                        <li>meltagun</li>
+                            </ul>
+                </p>
+                    </br>
+                    </br>
+            </div>
+            </div>
+            </div>
+
+    <!-- Tier 6 -->
+    <div class="tier-container">
+        <div class="tier heavy-tier"> 
+            <h2>Tier 6</h2>
+            <!-- FINAL BATTLE TRAIT -->
+            <label class="battle-trait heavy" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="heavy-trait15" name="heavy-tier6" class="battle-trait-checkbox">
+                <b>Grinding Advance, Roaring Victory</b>
+            </label>
+                <div id="heavy-trait15-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>When the full might of an armored battalion arrives on the battlefield, there is little an unprepared foe can do.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>[vehicle] units in your army that have moved less than half their movement characteristic may fire their weapons twice.
+                    </br>
+                    </br>
+                    <i>Designer's Commentary: if you have the rubber-coated roadwheels tech, the vehicle still counts as having moved however many inches when determining this tech’s effect.</i></p>
+            </br>
+            </br>
+            </div>
+        </div>
+    </div>
+    </br>
+<script>
+    function toggleDetails(id) {
+        var details = document.getElementById(id);
+        if (details.style.display === "block") {
+            details.style.display = "none";
+        } else {
+            details.style.display = "block";
+        }
+    }
+
+function toggleBattleTrait(element) {
+    var details = element.nextElementSibling; // Ensuring that the next sibling is indeed the detail container.
+    while (details && !details.classList.contains('battle-trait-details')) {
+        details = details.nextElementSibling; // This loop ensures that you skip any non-detail elements mistakenly caught.
+    }
+    if (details) {
+        details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+}
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const selectedTraits = {};
+
+document.querySelectorAll('.battle-trait-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        const traitName = checkbox.nextElementSibling.textContent.trim();
+        const detailContainer = checkbox.parentNode.nextElementSibling; // Assuming the label and the corresponding details div are siblings
+        const tierClass = checkbox.closest('.tier').classList[1];
+        const inGameEffectText = detailContainer.querySelectorAll('p')[detailContainer.querySelectorAll('p').length - 1].textContent.trim();
+
+        if (!selectedTraits[tierClass]) {
+            selectedTraits[tierClass] = [];
+        }
+
+        if (checkbox.checked) {
+            selectedTraits[tierClass].push('<strong>' + traitName + '</strong>: ' + inGameEffectText);
+        } else {
+            const index = selectedTraits[tierClass].indexOf('<strong>' + traitName + '</strong>: ' + inGameEffectText);
+            if (index !== -1) {
+                selectedTraits[tierClass].splice(index, 1);
+            }
+        }
+
+        generateBenefitsTable();
+    });
+});
+
+
+        function generateBenefitsTable() {
+            const tableContainer = document.getElementById('benefitsTable');
+            tableContainer.innerHTML = ''; 
+            
+            const table = document.createElement('table');
+            table.style.width = '100%';
+            table.setAttribute('border', '1');
+            
+            let html = '<tr><th>Tier</th><th>Selected Traits and Effects</th></tr>';
+            Object.keys(selectedTraits).forEach(tier => {
+                const capitalizedTierName = tier.replace(/\b\w/g, char => char.toUpperCase()); 
+                const selectedTraitsList = selectedTraits[tier].join('<br><br>'); 
+                html += `<tr><td><strong>${capitalizedTierName.replace(/\-/g, ' ').replace('Tier', 'Tier ')}</strong></td><td>${selectedTraitsList}</td></tr>`; // Formatting tier class for display
+            });
+
+            table.innerHTML = html;
+            tableContainer.appendChild(table);
+        }
+    });
+</script>
+
+
+
+
+
+    <div id="benefitsOverview">
+        <h2>Benefits Overview</h2>
+        <div id="benefitsTable"></div>
+    </div>
+
+    </body>
+    </html>
