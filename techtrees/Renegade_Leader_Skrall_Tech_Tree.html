@@ -1,0 +1,1404 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Renegade Leader Skrall Tech Tree</title>
+        <style>
+            body {
+                font-family: Roboto, sans-serif;
+                margin: 20px;
+                background-color: #f0f0f0;
+            }
+            .branch-container {
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                box-shadow: 0 0 5px rgba(0,0,0,0.2);
+                cursor: pointer; /* Added cursor pointer */
+            }
+            .incus { background-color: #ccffcc; }
+            .map { background-color: #ffcccc; }
+            .rebels { background-color: #ccffff; }
+            .insurrectionists { background-color: #ffccff; }
+            .building { background-color: #0177a7; }
+            .tier-container {
+                padding-left: 20px;
+            }
+            .tier {
+                margin: 10px 0;
+                padding-left: 20px;
+                border-left: 2px solid #ccc;
+            }
+            .battle-trait {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                margin-bottom: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .battle-trait input[type="checkbox"] {
+                margin-right: 10px;
+            }
+            .battle-trait-details {
+                padding: 10px;
+                background-color: #f0f0f0;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                display: none; /* Initially hidden */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Commander Tech Tree - Renegade Leader Skrall</h1>
+        <h2>Commander Affiliation Rule - Watch your step!</h2>
+
+        <h3>In-Game Effect</h3>
+        <p>Armies following RENEGADE LEADER KRALL have access to the <b>“A Deadly Prize” </b>stratagem.</p>
+        <br>
+        <b>A Deadly Prize (1CP)</b><br> 
+        <b>TARGET:</b> One INFANTRY or  MOUNTED unit from your army within range of an objective marker you control.<br>
+        <b>WHEN: </b>Start of the Command Phase.<br>
+        <b>EFFECT: </b>That objective marker is said to be Sabotaged, and remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn. While an objective marker is Sabotaged and under your control, each time an enemy unit ends a Normal, Advance, Fall Back or Charge move within range of that objective marker, roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds.<br>
+        If said army already had access to this stratagem, once per game, it costs 0 CP.
+</p>
+
+
+
+        </br>
+    </br>
+    </br>
+    <h2>Tech Tree Rules</h2>
+    <ul>
+        <li>Renegade Leader Skrall has 2 battle trees and 1 map tree.</li>
+        <li>Click on the selection box of ear ability to see more details.</li>
+        <li>Within each branch, you can only pick one battle trait per tier.</li>
+        <li>Finally Renegade Leader Skrall gives access to three distinct buildings to construct.</li>
+        <li><b>Tier not responding? Try again and pay your respects to the Machine God!</b></li>
+    </ul>
+    </br>   
+    <!-- Rebels Branch -->
+    <div class="branch-container rebels" onclick="toggleDetails('rebels-details')"><h3>Rebels</h3> <i><p>Hordes, Explosions, Coordination ... what is not to love?</p></i></div>
+    <div id="rebels-details" class="details">
+        <!-- Tier 1 -->
+        <div class="tier-container">
+            <div class="tier rebels-tier"> 
+                <h2>Tier 1</h2>
+                <!-- Battle Trait 1 -->
+                <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="rebels-trait1" name="rebels-tier1" class="battle-trait-checkbox">
+                    <b>Never Just One</b>
+                </label>
+                <div id="rebels-trait1-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Rebellions are no one man job.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <br>
+                    
+                    <p>
+                    
+                        When the enemy fires a weapon with the BLAST keyword at a friendly INFANTRY, SWARM or BEAST unit, reduce their number of attacks by 1 (to a minimum of 1).
+                     
+                    <br>
+                    
+                        Once per game, you may use the GO TO GROUND Stratagem for 0 CP, even if another unit from your army has already been targeted by that Stratagem this phase.
+                    
+                    <br>
+                  
+                        Gain access to the GRENADES stratagem.
+                    
+                    
+</p>
+                </div>
+            </div>
+        </div>
+        <!-- Tier 2 -->
+        <div class="tier-container">
+            <div class="tier rebels-tier"> 
+                <h2>Tier 2</h2>
+                <!-- Battle Trait 1 -->
+                <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="rebels-trait3" name="rebels-tier2" class="battle-trait-checkbox">
+                    <b>Undermining Terrain</b>
+                </label>
+                <div id="rebels-trait3-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Literally.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Choose one terrain feature outside of any deployment zone. Do not let your opponent know which terrain feature this is. The first time an enemy unit ends a move on said terrain feature, you may immediately resolve the effects of the GRENADES stratagem on that unit for free, disregarding any other restrictions such as range or times the stratagem was used. After the first time this happens, the terrain feature no longer contains any mines and is safe to enter by the enemy.
+                    </br>
+                    </br>
+                    If there are no terrain features on the board (or none that are accessible to enemy models), you may instead place a marker in no man’s land. The same effects apply the first time an enemy model starts or ends a move within 6” of that marker.</p>
+                </div>
+            </div>
+        </div>
+                <!-- Battle Trait 2 -->
+                <div class="tier-container">
+                <div class="tier rebels-tier"> 
+                <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="rebels-trait4" name="rebels-tier2" class="battle-trait-checkbox">
+                    <b>Explosives are a Man's Best Friend</b>
+                </label>
+                <div id="rebels-trait4-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>It is just a package, don't worry about it!</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Friendly units in your army firing weapons with the BLAST keyword increase their number of attacks with said weapons by 1. 
+                        <br>
+                        <br>
+                    When using the GRENADES stratagem, increase the number of D6’s rolled by 2.</p>
+                </div>
+            </div>
+        </div>
+                <!-- Battle Trait 3 -->
+                <div class="tier-container">
+                <div class="tier rebels-tier"> 
+                <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="rebels-trait5" name="rebels-tier2" class="battle-trait-checkbox">
+                    <b>Direct Command</b>
+                </label>
+                <div id="rebels-trait5-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Lead From the Front!</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Units that have CHARACTER models attached may add one to their BATTLESHOCK and DESPERATE ESCAPE tests. 
+                        <br>
+                        <br>
+                    In addition, your WARLORDS’ unit may still use stratagems when BATTLESHOCKED.</p>
+                </div>
+            </div>
+        </div>
+       <!-- Tier 3 -->
+    <div class="tier-container">
+        <div class="tier rebels-tier">
+            <h2>Tier 3</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="rebels-trait6" name="rebels-tier3" class="battle-trait-checkbox">
+                <b>Covering Fire</b>
+            </label>
+                <div id="rebels-trait6-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Gotta have each other's back!</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>When using the OVERWATCH stratagem, select one friendly unit within 6” of your unit and within 24” of the targeted enemy unit. That friendly unit may also use the OVERWATCH stratagem at the same target for free.</p>
+                </div>
+             </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier rebels-tier"> 
+            <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="incus-trait7" name="rebels-tier3" class="battle-trait-checkbox">
+                <b>Tank Traps</b>
+            </label>
+                <div id="rebels-trait7-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>They rely on their heavy armour. Show them their mistake.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Choose two enemy VEHICLE or MONSTER units or one TITANIC unit (excluding AIRCRAFT or those with the FLY keyword) at the start of the game.<br>
+                    In the first battle round, that vehicle halves its’ advance rolls and reduces its’ movement characteristic by 3”.</p>
+            </div>
+        </div>
+    </div>
+            <!-- Battle Trait 3 -->
+            <div class="tier-container">
+            <div class="tier rebels-tier"> 
+            <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="rebels-trait8" name="rebels-tier3" class="battle-trait-checkbox">
+                <b>Improvised Cover</b>
+            </label>
+                <div id="rebels-trait8-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Use what you can to keep yourself alive.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>INFANTRY, SWARM and BEAST models always have the Benefit of Cover when in your deployment zone, irrespective of any enemy ability.
+                    <br>
+                    <br>
+                    INFANTRY models in your army gain the HEAVY keyword whilst in your deployment zone. If they fire a weapon that already had that keyword, they maintain the effects even if they move, as long as they stay within your deployment zone.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Tier 4 -->
+    <div class="tier-container">
+        <div class="tier rebels-tier"> 
+            <h2>Tier 4</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="rebels-trait9" name="rebels-tier4" class="battle-trait-checkbox">
+                <b>Supreme Command</b>
+            </label>
+                <div id="rebels-trait9-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>This is what elevates us from a mob to soldiers.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <br><p>Once per battle round, one CHARACTER model in your army may use their special ability on a unit they are not attached to that is within 12 inches of that CHARACTERS’ UNIT.
+                    <br>  
+                    <br>Example: A Space Marine Librarian may use their Psychic Fortress ability on an INFANTRY unit within 12 inches of the unit he is attached to.
+                    This special ability MUST be an ability that would have afflicted the entire unit, not just the CHARACTER model itself (i.e. Finest Hour, Refuse to Yield, Abundance of Sickness, etc.). This ability can only be used on a unit with the same main keyword (i.e. INFANTRY, VEHICLE, etc.) as the unit that CHARACTER is attached to (or can attach to), unless said ability specifically states the type of unit it can be used on.
+
+                        </br>
+                        </br>
+                    <b>Restriction:</b>
+                    <br>You must have the 'Direct Command' skill (tier 2) to be able to use this skill.
+                    </p>
+            </div>
+             </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier rebels-tier">
+            <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="rebels-trait10" name="rebels-tier4" class="battle-trait-checkbox">
+                <b>Sabotaged Mechanics</b>
+            </label>
+                <div id="rebels-trait10-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Warranty’s just expired too.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Once per game, you may choose to activate this ability when an enemy VEHICLE is about to fire. That units’ weapons gain the HAZARDOUS keyword, and they must take a hazardous test for every weapon they are equipped with, even if they will not fire it. They must also add 1 to the dice roll when making their HAZARDOUS tests for that enemy VEHICLE unit.
+                            </br>
+                            </br>
+                    In addition, enemy units with the DEADLY DEMISE special rule add 1 to the roll made for that rule.</p>
+            </div>
+        </div>
+    </div>
+            <!-- Battle Trait 3 -->
+            <div class="tier-container">
+            <div class="tier rebels-tier">
+            <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="rebels-trait11" name="rebels-tier4" class="battle-trait-checkbox">
+                <b>Stand Your Ground</b>
+            </label>
+                <div id="rebels-trait11-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>No backwards step.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Once per game, when a friendly unit is being charged by an enemy unit, you may overwatch for no cost with said unit at full ballistic skill. In addition, you may use the GRENADES stratagem on that charging unit as well.
+                            </br>
+                            </br>
+                    You may use this skill in combination with the Covering Fire skill, but only one unit may fire at full ballistic skill.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tier 5 -->
+    <div class="tier-container">
+        <div class="tier rebels-tier"> 
+            <h2>Tier 5</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="rebels-trait12" name="rebels-tier5" class="battle-trait-checkbox">
+                <b>Priority Target</b>
+            </label>
+                <div id="rebels-trait12-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Force concentration is key to win a battle.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>At the start your opponents’ first Command Phase, choose one objective marker in no man’s land. All units in your army may reroll wound rolls of 1 versus enemy units within range of that objective marker.
+                    <br>
+                    <br>
+                    If there are no objective markers on the battlefield, you may either choose one terrain feature in no man’s land (in this case, you may reroll 1s to wound versus enemy units within said terrain feature) or the area within 6” of the centre of the battlefield. 
+
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier rebels-tier"> 
+            <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="rebels-trait13" name="rebels-tier5" class="battle-trait-checkbox">
+                <b>Bait and Switch</b>
+            </label>
+                <div id="rebels-trait13-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Switch!</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Once per game, when an enemy unit moves within 9 inches of a friendly unit (excluding VEHICLE units), that friendly unit may immediately Switch: They make a normal move of up to 6 inches away from the enemy unit. 
+                    </br>
+                    </br>
+                    A different friendly unit (excluding VEHICLE units) that were within 12” of the original position of the Switching unit may move up to the original position of the Switching unit, but does not have to. If they choose to do so, that unit gains +1 to their armour saving throws until the start of your next command phase.   
+            </div>
+        </div>
+    </div>
+            <!-- Battle Trait 3 -->
+            <div class="tier-container">
+            <div class="tier rebels-tier"> 
+            <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="rebels-trait14" name="rebels-tier5" class="battle-trait-checkbox">
+                <b>One With the Shadows</b>
+            </label>
+                <div id="rebels-trait14-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Now you see me ...</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Your WARLORDS’ unit has the LONE OPERATIVE special rule until the first time they come into engagement range of an enemy unit.   
+            </div>
+        </div>
+    </div>
+
+    <!-- Tier 6 -->
+    <div class="tier-container">
+        <div class="tier rebels-tier"> 
+            <h2>Tier 6</h2>
+            <!-- FINAL BATTLE TRAIT 1 -->
+            <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="rebels-trait15" name="rebels-tier6" class="battle-trait-checkbox">
+                <b>We Are Legion</b>
+            </label>
+                <div id="rebels-trait15-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>We are the man behind you</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Once per game, when a friendly unit (excluding VEHICLE, MONSTER or TITANIC units and CHARACTER models) is removed from the battlefield as a casualty, place that unit in Reserves instead. (If they can DEEPSTRIKE through whatever means, they may do so.) This unit is treated as a brand new unit with exactly the same weapons and stats as the one it replaced (excluding any upgrades received through the Mistmeadows crusade special rules).
+                    </br>
+                    </br>
+                    If you choose to use this ability on a BATTLELINE unit, you may use this ability twice, but only on BATTLELINE units. (These do not need to have been destroyed in the same phase, turn or battle round.)</p>
+            </div>
+        </div>
+    </div>
+            <!-- FINAL BATTLE TRAIT 2 -->
+    <div class="tier-container">
+        <div class="tier rebels-tier"> 
+            <label class="battle-trait rebels" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="rebels-trait16" name="rebels-tier6" class="battle-trait-checkbox">
+                <b>No More Holding Back</b>
+            </label>
+                <div id="rebels-trait16-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Time to pull out all the stops. </i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>- BLAST weapons may gain the HAZARDOUS keyword.<br>
+                    - Weapons with the HAZARDOUS keyword gain the DEVASTATING WOUNDS keyword.<br>
+                    - If a weapon already had both rules, their damage profile is increased by 1.<br>
+                    - You may use the GRENADES stratagem as many times per turn as you want, and the first two times you use it, it costs 0 CP. <br>
+                    - You may use the Sabotaged Mechanics skill once per battle round instead of once per game.</p>
+            </div>
+        </div>
+    </div>
+
+    </br>
+<!-- Insurrectionists Branch -->
+ <div class="branch-container insurrectionists" onclick="toggleDetails('insurrectionists-details')"><h3>Insurrectionists</h3> <i><p>Mounted, Transports, Cloak and Dagger.</p></i></div>
+    <div id="insurrectionists-details" class="details">
+        <!-- Tier 1 -->
+        <div class="tier-container">
+            <div class="tier insurrectionists-tier"> 
+                <h2>Tier 1</h2>
+                <!-- Battle Trait 1 -->
+                <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="insurrectionists-trait1" name="insurrectionists-tier1" class="battle-trait-checkbox">
+                    <b>Shadow Operations</b>
+                </label>
+                <div id="insurrectionists-trait1-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>They say light is the fastest, yet the dark is always there first.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <br>
+                    <p>
+                    
+                        INFANTRY and MOUNTED units gain the STEALTH keyword.
+                        <br>
+                        MOUNTED units gain the BATTLELINE keyword.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Tier 2 -->
+        <div class="tier-container">
+            <div class="tier insurrectionists-tier"> 
+                <h2>Tier 2</h2>
+                <!-- Battle Trait 1 -->
+                <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="insurrectionists-trait3" name="insurrectionists-tier2" class="battle-trait-checkbox">
+                    <b>Grand Theft Auto</b>
+                </label>
+                <div id="insurrectionists-trait3-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>It’s their fault for parking here really.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>When you destroy an enemy TRANSPORT, you may exempt 1 friendly DEDICATED TRANSPORT from rolling an out of action test.
+                    </p>
+                </div>
+            </div>
+        </div>
+                <!-- Battle Trait 2 -->
+                <div class="tier-container">
+                <div class="tier insurrectionists-tier"> 
+                <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="insurrectionists-trait4" name="insurrectionists-tier2" class="battle-trait-checkbox">
+                    <b>Adversity Provides Opportunity</b>
+                </label>
+                <div id="insurrectionists-trait4-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>The best operatives perform under even the worst circumstances.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>INFANTRY, SWARM, MOUNTED and BEAST units can still perform actions after advancing or falling back.
+                        <br>
+                    INFANTRY, SWARM, MOUNTED and BEAST units at or below half strength gain +1 to the hit roll.</p>
+                </div>
+            </div>
+        </div>
+                <!-- Battle Trait 3 -->
+                <div class="tier-container">
+                <div class="tier insurrectionists-tier"> 
+                <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                    <input type="checkbox" id="insurrectionists-trait5" name="insurrectionists-tier2" class="battle-trait-checkbox">
+                    <b>Terror Tactics</b>
+                </label>
+                <div id="insurrectionists-trait5-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Get them while they’re scared.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>At the end of your charge phase, enemy units that are in engagement range of two or more of your friendly units must take a BATTLESHOCK test.
+                    <br>
+                    Units in your army may reroll 1s to hit versus BATTLESHOCKED enemy units. </p>
+                </div>
+            </div>
+        </div>
+       <!-- Tier 3 -->
+    <div class="tier-container">
+        <div class="tier insurrectionists-tier">
+            <h2>Tier 3</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="insurrectionists-trait6" name="insurrectionists-tier3" class="battle-trait-checkbox">
+                <b>From the Shadows</b>
+            </label>
+                <div id="insurrectionists-trait6-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>We’re in their walls.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>At the end of your opponents’ fight phase, you may choose one INFANTRY unit (up to two if they are BATTLELINE) that are more than 3” away from any enemy models. Place these units into strategic reserves.</p>
+                </div>
+             </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier insurrectionists-tier"> 
+            <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="insurrectionists-trait7" name="insurrectionists-tier3" class="battle-trait-checkbox">
+                <b>Cut Off the Head of the Snake</b>
+            </label>
+                <div id="insurrectionists-trait7-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Take out their leaders, and the rest swiftly follows.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Your WARLORDS’ unit gains the PRECISION (5+) keyword on their attacks.
+                    <br>
+                    When the enemy WARLORD is removed from the battlefield, all enemy units on the battlefield must take a BATTLESHOCK test.
+</p>
+            </div>
+        </div>
+    </div>
+            <!-- Battle Trait 3 -->
+            <div class="tier-container">
+            <div class="tier insurrectionists-tier"> 
+            <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="insurrectionists-trait8" name="insurrectionists-tier3" class="battle-trait-checkbox">
+                <b>Drive-By</b>
+            </label>
+                <div id="insurrectionists-trait8-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>The Underhive Special.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>In the shooting phase, friendly models that disembarked from a transport may make a normal move of up to 6 inches after resolving all of their attacks. MOUNTED units may move up to half of their movement characteristic instead.
+                    <br>
+                    <br>
+                    Models who made this move may not charge in the following phase, unless their transport had the ASSAULT RAMP special rule. In addition, said transport may not have been set up onto the battlefield via Strategic Reserves or DEEPSTRIKE.
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Tier 4 -->
+    <div class="tier-container">
+        <div class="tier insurrectionists-tier"> 
+            <h2>Tier 4</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="insurrectionists-trait9" name="insurrectionists-tier4" class="battle-trait-checkbox">
+                <b>Pimp Your Ride</b>
+            </label>
+                <div id="insurrectionists-trait9-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Don’t worry, the Mechanicus isn’t watching.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <br><p>DEDICATED TRANSPORTS in your army add 2” to their movement characteristic and gain the FIRING DECK 2 special rule. If they already have the FIRING DECK special rule, add 2 to the number of models eligible to fire using that rule.
+                    <br>  
+                    <br>DEDICATED TRANSPORTS in your army gain the following weapon:<br>
+        "Demolition charge cache" (ASSAULT, BLAST, HAZARDOUS)<br>
+        Range: 6”<br>
+        A: D6+3<br>
+        BS: 5+<br>
+        S: 12<br>
+        AP: -2<br>
+        D: 2<br>
+            </p>
+            </div>
+             </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier insurrectionists-tier">
+            <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="insurrectionists-trait10" name="insurrectionists-tier4" class="battle-trait-checkbox">
+                <b>Tunnel Network</b>
+            </label>
+                <div id="insurrectionists-trait10-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>They call it the Underground Movement for a reason.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Two friendly BATTLELINE INFANTRY units or one INFANTRY, MOUNTED or WALKER/MONSTER unit with less than 10 wounds gains the DEEPSTRIKE ability.
+                    <br>If they deploy wholly within a terrain feature, they may set up outside of 7” of any enemy units.</p>
+            </div>
+        </div>
+    </div>
+            <!-- Battle Trait 3 -->
+            <div class="tier-container">
+            <div class="tier insurrectionists-tier">
+            <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="insurrectionists-trait11" name="insurrectionists-tier4" class="battle-trait-checkbox">
+                <b>Swift Strike</b>
+            </label>
+                <div id="insurrectionists-trait11-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>We must keep moving!</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Once per game, MOUNTED units and units with a move characteristic of 7 inches or higher may advance, shoot and charge. 
+                            </br>
+                            </br>
+                    VEHICLE units with less than 9 wounds or VEHICLE units with less than 12 wounds but with a movement characteristic of at least 14” may add 2” to their movement characteristics and gain a +1 to the hit roll.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tier 5 -->
+    <div class="tier-container">
+        <div class="tier insurrectionists-tier"> 
+            <h2>Tier 5</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="insurrectionists-trait12" name="insurrectionists-tier5" class="battle-trait-checkbox">
+                <b>Quick Footed</b>
+            </label>
+                <div id="insurrectionists-trait12-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Strike like lightning!</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Your WARLORDS’ unit adds 2” to their movement characteristic.
+                    <br>
+                    In addition, if it has the DEEPSTRIKE ability, when using that ability, they may deploy up to 8” within range of an enemy unit. <br>(If utilising the Tunnel Network skill, they may deploy within 6” when wholly deploying within a terrain feature.)
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier insurrectionists-tier"> 
+            <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="insurrectionists-trait13" name="insurrectionists-tier5" class="battle-trait-checkbox">
+                <b>Special Quarry</b>
+            </label>
+                <div id="insurrectionists-trait13-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>A chain is only as strong as its’ weakest link.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>At the start of the battle, choose one CHARACTER unit in your opponents’ army. Friendly units gain the LETHAL HITS special rule when resolving attacks targeting that enemy unit. In addition, when that unit dies, all enemy units within 12” range of that unit must take a BATTLESHOCK test. 
+                    </br>
+                    </br>
+                    <b>Restrictions:</b>
+                    <br>
+                    You must have the Terror Tactics skill to be able to use this skill.
+                    </p>
+            </div>
+        </div>
+    </div>
+            <!-- Battle Trait 3 -->
+            <div class="tier-container">
+            <div class="tier insurrectionists-tier"> 
+            <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="insurrectionists-trait14" name="insurrectionists-tier5" class="battle-trait-checkbox">
+                <b>Wiretapped Comms</b>
+            </label>
+                <div id="insurrectionists-trait14-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>They don’t know we’re listening.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Once per game, after your opponent uses a Battle Tactic Stratagem, increase the CP cost of that stratagem by 1 for the rest of the game.<br>
+                    <br>
+                    Once per game, select one enemy CHARACTER model in your opponents’ command phase. That enemy CHARACTER model cannot use any special rules associated with its’ data sheet or faction, nor can it confer any rule upon its’ unit such as FIGHT FIRST or SCOUT.
+                    <br>
+                    <i>I.e. a Cadian Castellan cannot give orders and its’ Senior Officer and Get Back in the Fight abilties have no effect.)</i>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tier 6 -->
+    <div class="tier-container">
+        <div class="tier insurrectionists-tier"> 
+            <h2>Tier 6</h2>
+            <!-- FINAL BATTLE TRAIT 1 -->
+            <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="insurrectionists-trait15" name="insurrectionists-tier6" class="battle-trait-checkbox">
+                <b>The Time is Now!</b>
+            </label>
+                <div id="insurrectionists-trait15-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>It is all or nothing!</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Once per game, for one battle round all units in your army may advance or fall back and still shoot, charge and fight. .
+                    </br>
+                    </br>
+                    Your WARLORDS’ unit has these benefits for the entire game.
+                    <br>
+                    <br>
+                    Increase the number of units described under the Tunnel Network skill to 3 for BATTLELINE infantry, and to 2 for the other specified units.</p>
+            </div>
+        </div>
+    </div>
+            <!-- FINAL BATTLE TRAIT 2 -->
+    <div class="tier-container">
+        <div class="tier insurrectionists-tier"> 
+            <label class="battle-trait insurrectionists" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="insurrectionists-trait16" name="insurrectionists-tier6" class="battle-trait-checkbox">
+                <b>Overcharged Engines!</b>
+            </label>
+                <div id="insurrectionists-trait16-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Ride for Ruin!</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>All VEHICLES with a transport capacity gain the ASSAULT RAMP special rule. If they already had that rule, add 2” to the charge roll when disembarking from that vehicle instead.
+                    <br>
+                    <br>
+                    MOUNTED units and units with a move characteristic of 7” or more gain +1 to the wound roll in close combat.</p>
+            </div>
+        </div>
+    </div>
+
+    </br>
+        <!-- Map Branch -->
+        <div class="branch-container map" onclick="toggleDetails('map-details')"><h3>Map Skills</h3>
+            <p><i>Abilities that focus on the Campaign Map.</p></i>
+            <p><b>Defenders: </b>All these rules only come into effect when defending a Chaos held territory or when Corruption > or equal to 50%.</p>
+            <p><b>Attackers: </b>All these rules only come into effect when attacking an Imperial held territory or when Corruption < 50%.</p></div>
+        <div id="map-details" class="details">
+            <!-- Tier 1 -->
+            <div class="tier-container">
+                <div class="tier map-tier">
+                    <h2>Tier 1</h2>
+                    <!-- Battle Trait 1 -->
+                    <label class="battle-trait map" onclick="toggleBattleTrait(this)">
+                        <input type="checkbox" id="map-trait1" name="map-tier1" class="battle-trait-checkbox">
+                        <b>Defenders: Lying in Wait</b>
+            </label>
+                <div id="map-trait1-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>We have been preparing for a while.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>One BATTLELINE unit in your army gains the INFILTRATE special rule, but must either deploy out of line of sight of the enemy forces or wholly within a terrain feature.</p>
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier map-tier"> 
+            <label class="battle-trait map" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="map-trait2" name="map-tier1" class="battle-trait-checkbox">
+                <b>Attackers: Eager Advance</b>
+            </label>
+                <div id="map-trait2-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>The early bird and all that stuff.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Up to two BATTLELINE units or one unit in your army gain the SCOUT 6” special rule. These units cannot charge if making use of this scout move.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Tier 2 -->
+    <div class="tier-container">
+        <div class="tier map-tier">
+            <h2>Tier 2</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait map" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="map-trait3" name="map-tier2-1" class="battle-trait-checkbox">
+                        <b>Defenders: Warp Totems</b>
+            </label>
+                <div id="map-trait3-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Psykers can be useful ... Sometimes.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>One unit in your army can perform this action in your deployment zone, which is completed at the end of your turn. Place one Warp Totem on the battlefield. No enemy unit can be set up from Strategic Reserves or Deepstrike within 12" of this totem.
+                    <br>
+                    In addition, friendly units wholly within 12” of a Warp Totem gain a 4+ FNP versus PSYCHIC attacks.
+            <br>
+            <br>
+            <b>Restrictions:</b>
+            <br>
+            You need to have <b>"Lying in Wait"</b> unlocked.</p>
+        
+            </div>
+            </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier map-tier"> 
+            <label class="battle-trait map" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="zeal-trait4" name="map-tier2-2" class="battle-trait-checkbox">
+                        <b>Attackers: On the Job Fund Raising</b>
+            </label>
+                <div id="map-trait4-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Guns don’t grow on trees, you know.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Each battleround, 1 BATTLELINE unit in your army may perform an action on an objective in no man’s land. If there are no objectives in play, you may do so instead when wholly within a RUINS terrain feature. This action is completed at the start of your next command phase.
+                    <br>
+                    Each time this action is successfully completed, gain a number of requisition points as detailed by Renegade Leader Krall.
+                    <br>
+                    <br>
+                <b>Restrictions:</b>
+            <br>
+            You need to have <b>"Eager Advance"</b> unlocked.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tier 3 -->
+    <div class="tier-container">
+        <div class="tier map-tier">
+            <h2>Tier 3</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait map" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="map-trait5" name="map-tier3" class="battle-trait-checkbox">
+                <b>Defenders: "Prepared" Defences</b>
+            </label>
+                <div id="map-trait5-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>They didn’t think it would be that easy, right?</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Choose one terrain feature in the enemies deployment zone. If the enemy deployment zone has no terrain features, choose one nearest to their deployment zone. No enemy unit can gain the benefit of cover from that terrain feature, nor can they gain the benefit of the HEAVY keyword whilst inside that terrain feature. 
+                    <br>
+                    In addition, add two CYCLOPS DEMOLITION VEHICLES to your army (up to a maximum of three). These units gain the INFILTRATE keyword, but must start the game within a terrain feature. These units do not prohibit enemy units from infiltrating within 9” of them, but if they do, the units immediately activate their Demolition Charges ability (affecting the infiltrating unit concerned regardless of distance).
+                    <br>
+                    <br>
+                <b>Restrictions:</b>
+                <br>
+                You need to have <b>"Warp Totems"</b> unlocked.</p>
+                    </div>
+                    </div>
+                    </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier map-tier"> 
+            <label class="battle-trait map" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="map-trait6" name="zeal-tier3" class="battle-trait-checkbox">
+                    <b>Attackers: Infiltration Detail</b>
+            </label>
+                <div id="map-trait6-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Gotta keep them on their toes.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Once per week, you may choose to wage an assault upon Imperial held territory not directly connected to Chaos held territory. This piece of territory must be at least two squares removed from an enemy command structure.
+                    <br>
+                    As this is a mission in enemy territory, the mission must be a Reconnaissance type mission of at most 1000 points (unless otherwise specified by Renegade Leader Krall).
+                    <br>
+                    <br>
+                    <b>Restriction:</b>
+                    </br>
+                    You need to have <b>"On the Job Fund Raising"</b> unlocked.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tier 4 -->
+    <div class="tier-container">
+        <div class="tier map-tier">
+            <h2>Tier 4</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait map" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="map-trait7" name="map-tier4" class="battle-trait-checkbox">
+                <b>Mercencary Network</b>
+            </label>
+                <div id="map-trait7-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Coins can buy dangerous allies.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>For the cost of 75 resources, you may add one of the following units to your army (For one week only, interchangeable between weeks), to a maximum of one of these units:
+                        <br>-	CYPHER
+                        <br>-	SKULLTAKER
+                        <br>-	KELERMORPH
+                        <br>-	REDUCTUS SABOTEUR
+                        <br>-	JACKAL ALPHUS
+                        <br>-	HEXMARK DESTROYER
+                        <br>-	IMPERIAL ASSASSIN (one of the four)
+                        <br>
+                        <br>If any of these units have a fire back mechanic, you may use their ability regardless of faction keyword used.
+                        <br>Mercenaries cannot join friendly units. Any abilities which specify their respective army faction only applies to them.
+        </p>
+        </div>
+        </div>
+        </div>
+    <!-- Tier 5 -->
+    <div class="tier-container">
+        <div class="tier map-tier">
+            <h2>Tier 5</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait map" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="map-trait9" name="map-tier5" class="battle-trait-checkbox">
+                <b>Defenders: Spotter Detail</b>
+            </label>
+                <div id="map-trait9-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>We’ve seen them coming from miles away.</i></p>
+                    <p><i>We shall know no fear, but they will know only terror.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>If the enemy player/team goes first, redeploy up to 3 units. If you/your team goes first, redeploy D3 units. This redeploy may be used to put friendly units in Strategic Reserves and/or Deepstrike (if they have the ability to do so), adhering to the usual rules for point limits.
+                    </p>
+        </div>
+            </div>
+            </div>
+            <!-- Battle Trait 2 -->
+            <div class="tier-container">
+            <div class="tier map-tier"> 
+            <label class="battle-trait map" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="map-trait10" name="map-tier5" class="battle-trait-checkbox">
+                    <b>Attackers: Local Knowledge</b>
+            </label>
+                <div id="map-trait10-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>We’ve been here longer than they thought.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Up to two INFANTRY or MOUNTED units put into strategic reserves can arrive onto the battlefield as if it were a turn earlier.
+                    <br>
+                    <i>(Example: units put into strategic reserves can arrive in the enemy deployment zone from turn 2 onwards)</i>
+</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- Tier 6 -->
+    <div class="tier-container">
+        <div class="tier map-tier">
+            <h2>Tier 6</h2>
+            <!-- Battle Trait 1 -->
+            <label class="battle-trait map" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="map-trait11" name="map-tier6" class="battle-trait-checkbox">
+                <b>Defenders: Last Stand</b>
+            </label>
+            <div id="map-trait11-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>This is it! </i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>You may add up to three pieces each of barbed wire and tank trap scatter terrain onto the battlefield, wholly contained in no man’s land, at least 9” away from the enemy deployment zone and 6” away from eachother. These scatter terrain pieces respectively slow down enemy INFANTRY/MOUNTED and VEHICLE (EXCLUDING AIRCRAFT) units by 2” when moving through them. In addition, enemy units moving through them take D3 mortal wounds (INFANTRY/MOUNTED are only affected by barbed wire, VEHICLES are only affected by tank traps). After being moved through for the first time, the scatter terrain is removed.
+                    <br><br>
+                    The Minefields special rule (see Watch Your Step) activates on advance rolls of a 4+.
+                    <br><br>
+                    In addition, your team gains the use of one of these sets of units (if multiple players have this skill, they may each choose one set):
+                    <br>-	2 stationary Hydra platforms/tanks
+                    <br>-	2 stationary Basilisk platforms/tanks
+                    <br>-	2 stationary Whirlwind platforms/tanks
+                    <br><br>
+                    These units may gain the benefit from your army ability if they originally belonged to your faction.
+                    <br>
+                    <br>
+                    <b>Restriction:</b>
+                    </br>
+                    You need to have <b>"Spotter Detail"</b> unlocked.
+            
+            </p>
+            </div>
+
+            <!-- Battle Trait 2 -->
+            <label class="battle-trait map" onclick="toggleBattleTrait(this)">
+                <input type="checkbox" id="map-trait11" name="map-tier6" class="battle-trait-checkbox">
+                <b>Attackers: Advanced Positions</b>
+            </label>
+            <div id="map-trait11-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Drive them back from whence they came.</i></p>
+                    </br>
+                    <b>In-Game Effect:</b>
+                    <p>Increase the size of your deployment zone by a 6” by 4” rectangle, either protruding from the middle of your deployment zone (long edge running along your deployment zone) or stretching outwards from the battlefield edge (long edge running along the battlefield edge).
+                    <br>
+                    <br>
+                    Increase the number of units specified under Eager Advance to 3 and remove the BATTLELINE and no charge restrictions. 
+                    <br>
+                    <br>
+                    In the first battle round, friendly units add 2” to their move characteristic and may reroll advance rolls.
+                    <br>
+                    <br>
+                    In addition, your team gains the use of one of these sets of units (if multiple players have this skill, they may each choose one set):
+                        <br>-	1 Stormraven Gunship
+                        <br>-	2 Valkyries
+                        <br>-	2 Stormtalon Gunships
+
+                        <br><br>Friendly units may embark in these irrespective of faction keywords, but do not gain any benefit from your army ability.
+                    <br>
+                    <br>
+                    <b>Restriction:</b>
+                    </br>
+                    You need to have <b>"Local Knowledge"</b> unlocked.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </br>
+ <!-- Building Branch -->
+        <div class="branch-container building" onclick="toggleDetails('building-details')">
+            <h3>Buildings</h3><p>
+            <b>Commander Specific Buildings</b></p>
+            <p>Even rebels need a base. </p>
+    </div>
+        <div id="building-details" class="details">
+            <div class="tier-container">
+                <div class="tier building-tier">
+                    <h2>Ordo Malleus Infrastructure Requisition</h2>
+            <label class="battle-trait building" onclick="toggleBattleTrait(this)">
+                        <input type="checkbox" id="building-trait1-1" name="building-tier1" class="battle-trait-checkbox">
+                        <b>Espionage Cadre (350 points)</b>
+            </label>
+                <div id="building-trait1-1-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Information is power.</i></p>
+                    </br>
+                    <b>Battle-Map Effect:</b>
+                    <p>Roll a D6 at the start of the Battle round; on the roll of a 4+, gain an additional CP.
+                        <br>
+                        <br>
+                        In addition, you may count the corruption level as 30% higher or lower for the purpose of activating the map skills.</p>
+            </div>
+        </div>
+    </div>
+        <div id="building-details" class="details">
+            <div class="tier-container">
+                <div class="tier building-tier">
+            <label class="battle-trait building" onclick="toggleBattleTrait(this)">
+                        <input type="checkbox" id="building-trait2-1" name="building-tier2" class="battle-trait-checkbox">
+                        <b>Field Medic Training (400 points)</b>
+            </label>
+                <div id="building-trait2-1-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Gotta take care of yourself while you’re in the field.</i></p>
+                    </br>
+                    <b>Battle-Map Effect:</b>
+                    <p>Once per week, select one BATTLELINE unit in your army. This unit permanently gains the following ability:</br>
+                    Field Medic: At the start of your command phase, heal D3 wounds. If all models in that unit have their starting number of wounds, but that unit is not at its Starting Strength, one destroyed model is returned to that unit with one wound remaining.
+                <br>
+                <br>
+                <i>Example: A unit of Intercessors (which have a Wounds characteristic of 2) activates the Field Medic ability. The unit had a Starting Strength of 5, but currently contains 2 models, and one of those models has lost 1 wound. A 3 is rolled to see how many wounds are healed. The first of these healed wounds restores the wounded Intercessor back to 2 wounds. The second of these healed wounds returns a destroyed Intercessor to the battlefield with 1 wound remaining. The third of these healed wounds restores one of the remaining lost wounds to the same Intercessor that was just returned. The unit now contains 3 models each with a full 2 wounds.</i>
+                <br>
+                <br>
+                If models in that unit have a wounds characteristic of 1, they may regain up to three models with this rule.
+                <br>
+                <br>
+                In case the selected unit has a similar rule, such as Reanimation Protocols, Death Korps Medi-pack or Cult Icon, increase the number of wounds restored by 1 instead.
+                </p>
+            </div>
+        </div>
+    </div>
+        <div id="building-details" class="details">
+            <div class="tier-container">
+                <div class="tier building-tier">
+            <label class="battle-trait building" onclick="toggleBattleTrait(this)">
+                        <input type="checkbox" id="building-trait3-1" name="building-tier3" class="battle-trait-checkbox">
+                        <b>Makeshift Weapons Workshop (300 points)</b>
+            </label>
+                <div id="building-trait3-1-details" class="battle-trait-details">
+                    <b>Lore description:</b>
+                    <p><i>Forge the tools of your liberation. (Or just procure them from the black market, it’s ok.)<br>
+                    web dev commentary: being able to parse this table from memory during a game should reward you with winning the entire game ... dafuq Jonas why did you design this?! </i></p>
+                    </br>
+                    <b>Battle-Map Effect:</b>
+                    <p>Lots and lots of tables!</p>
+                    <br>You may choose a BATTLELINE INFANTRY unit whose only melee weapon is the Close Combat weapon (excluding ‘sergeant’ type models). For the cost of 2 points per model, you may give that unit the following MELEE weapon:
+                    <br>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Resource cost</th>
+      <th>Attacks</th>
+      <th>WS</th>
+      <th>S</th>
+      <th>AP</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Chain Bayonets (EXTRA ATTACKS)</td>
+      <td>2 per model</td>
+      <td>1</td>
+      <td>(equal to that of your Close Combat Weapon)</td>
+      <td>(equal to that of your Close Combat Weapon)</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+
+                    <br>
+                    <br>
+                    Sergeant type models may be given the following weapons for the specified cost. They may only be equipped with one PISTOL and MELEE weapon each from this list. If you have equipped one of these items you may choose to replace them with another item on this list for the specified cost.
+                    <br>
+                    <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Resource cost</th>
+      <th>Range</th>
+      <th>Attacks</th>
+      <th>WS/BS</th>
+      <th>S</th>
+      <th>AP</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hand Flamer (PISTOL, TORRENT, IGNORES COVER)</td>
+      <td>5</td>
+      <td>12"</td>
+      <td>D6</td>
+      <td>-</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Power Dagger (EXTRA ATTACKS)</td>
+      <td>5</td>
+      <td>Melee</td>
+      <td>2</td>
+      <td>3+</td>
+      <td>3</td>
+      <td>-2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Condemnor Bolt Pistol (PISTOL, ANTI-PSYKER 2+, DEVASTATING WOUNDS, PRECISION)</td>
+      <td>10</td>
+      <td>12"</td>
+      <td>1</td>
+      <td>3+</td>
+      <td>4</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Tankhammer (ANTI-VEHICLE 4+, DEVASTATING WOUNDS, HAZARDOUS</td>
+      <td>10</td>
+      <td>Melee</td>
+      <td>2</td>
+      <td>4+</td>
+      <td>7</td>
+      <td>-1</td>
+      <td>D3</td>
+    </tr>
+  </tbody>
+</table>
+
+
+                    <br>
+                    <br>
+                    Once per week you may also choose a CHARACTER to gain a PISTOL, MELEE weapon or other equipment of your choosing from the list below for the specified cost.
+                    <br>
+                    CHARACTERS may only equip one item each from the three tables below. Once bought, they have these items in addition to their other wargear.
+                    <br>
+                    If you have equipped one of these items you may choose to replace them with another item on this list for the specified cost. 
+                    <br>
+                    <br>
+                    <table>
+  <thead>
+    <tr>
+      <th>PISTOL WEAPONS</th>
+      <th>Resource cost</th>
+      <th>Range</th>
+      <th>Attacks</th>
+      <th>BS</th>
+      <th>S</th>
+      <th>AP</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Macrostubber (PISTOL)</td>
+      <td>5</td>
+      <td>12"</td>
+      <td>5</td>
+      <td>3+</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Phosphor Serpenta (IGNORES COVER, PISTOL)</td>
+      <td>10</td>
+      <td>18"</td>
+      <td>1</td>
+      <td>3+</td>
+      <td>5</td>
+      <td>-1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Scoped needle pistol (ANTI-INFANTRY 2+, PISTOL, IGNORES COVER)</td>
+      <td>10</td>
+      <td>12"</td>
+      <td>1</td>
+      <td>2+</td>
+      <td>2</td>
+      <td>0</td>
+      <td>D3</td>
+    </tr>
+    <tr>
+      <td>Liberator Autostub (PISTOL, SUSTAINED HITS D3, DEVASTATING WOUNDS)</td>
+      <td>10</td>
+      <td>12"</td>
+      <td>3</td>
+      <td>2+</td>
+      <td>5</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Big Shot™ (PISTOL, HAZARDOUS)</td>
+      <td>15</td>
+      <td>6"</td>
+      <td>D3</td>
+      <td>4+</td>
+      <td>8</td>
+      <td>-2</td>
+      <td>D6</td>
+    </tr>
+    <tr>
+      <td>Grav Shredder (PISTOL, TORRENT, ANTI-VEHICLE 2+)</td>
+      <td>15</td>
+      <td>12"</td>
+      <td>D3</td>
+      <td>-</td>
+      <td>4</td>
+      <td>-1</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+                    </table>
+                    <br>
+                    <br>
+                    <table>
+  <thead>
+    <tr>
+      <th>MELEE WEAPONS</th>
+      <th>Resource cost</th>
+      <th>Attacks</th>
+      <th>WS</th>
+      <th>S</th>
+      <th>AP</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Psyber Hawk (EXTRA ATTACKS)</td>
+      <td>10</td>
+      <td>D6</td>
+      <td>3+</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Xenophase blade (DEVASTATING WOUNDS)</td>
+      <td>10</td>
+      <td>3</td>
+      <td>3+</td>
+      <td>5</td>
+      <td>-2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Taser goad (SUSTAINED HITS 2)</td>
+      <td>10</td>
+      <td>3</td>
+      <td>3+</td>
+      <td>6</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Rocket Fist™ (EXTRA ATTACKS, ANTI-VEHICLE 4+, HAZARDOUS)</td>
+      <td>15</td>
+      <td>2</td>
+      <td>4+</td>
+      <td>7</td>
+      <td>-1</td>
+      <td>D3</td>
+    </tr>
+    <tr>
+      <td>Power Scourge (EXTRA ATTACKS, SUSTAINED HITS 2)</td>
+      <td>15</td>
+      <td>D6</td>
+      <td>3+</td>
+      <td>5</td>
+      <td>-2</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+                    <br>
+                    <br>
+                    <table>
+  <thead>
+    <tr>
+      <th>OTHER EQUIPMENT</th>
+      <th>Resource cost</th>
+      <th>Effect</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Grenade Belt</td>
+      <td>5</td>
+      <td>Your CHARACTER model gains the GRENADES and SMOKE keywords.</td>
+    </tr>
+    <tr>
+      <td>Weavefield Crest</td>
+      <td>15</td>
+      <td>Your CHARACTER model gains a 4+ invulnerable save.</td>
+    </tr>
+    <tr>
+      <td>Shield Drone</td>
+      <td>15</td>
+      <td>Your CHARACTER model adds one to their Wounds characteristic.</td>
+    </tr>
+  </tbody>
+</table>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    function toggleDetails(id) {
+        var details = document.getElementById(id);
+        if (details.style.display === "block") {
+            details.style.display = "none";
+        } else {
+            details.style.display = "block";
+        }
+    }
+
+function toggleBattleTrait(element) {
+    var details = element.nextElementSibling; // Ensuring that the next sibling is indeed the detail container.
+    while (details && !details.classList.contains('battle-trait-details')) {
+        details = details.nextElementSibling; // This loop ensures that you skip any non-detail elements mistakenly caught.
+    }
+    if (details) {
+        details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+}
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const selectedTraits = {};
+
+document.querySelectorAll('.battle-trait-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        const traitName = checkbox.nextElementSibling.textContent.trim();
+        const detailContainer = checkbox.parentNode.nextElementSibling; // Assuming the label and the corresponding details div are siblings
+        const tierClass = checkbox.closest('.tier').classList[1];
+        const inGameEffectText = detailContainer.querySelectorAll('p')[detailContainer.querySelectorAll('p').length - 1].textContent.trim();
+
+        if (!selectedTraits[tierClass]) {
+            selectedTraits[tierClass] = [];
+        }
+
+        if (checkbox.checked) {
+            selectedTraits[tierClass].push('<strong>' + traitName + '</strong>: ' + inGameEffectText);
+        } else {
+            const index = selectedTraits[tierClass].indexOf('<strong>' + traitName + '</strong>: ' + inGameEffectText);
+            if (index !== -1) {
+                selectedTraits[tierClass].splice(index, 1);
+            }
+        }
+
+        generateBenefitsTable();
+    });
+});
+
+
+        function generateBenefitsTable() {
+            const tableContainer = document.getElementById('benefitsTable');
+            tableContainer.innerHTML = ''; 
+            
+            const table = document.createElement('table');
+            table.style.width = '100%';
+            table.setAttribute('border', '1');
+            
+            let html = '<tr><th>Tier</th><th>Selected Traits and Effects</th></tr>';
+            Object.keys(selectedTraits).forEach(tier => {
+                const capitalizedTierName = tier.replace(/\b\w/g, char => char.toUpperCase()); 
+                const selectedTraitsList = selectedTraits[tier].join('<br><br>'); 
+                html += `<tr><td><strong>${capitalizedTierName.replace(/\-/g, ' ').replace('Tier', 'Tier ')}</strong></td><td>${selectedTraitsList}</td></tr>`; // Formatting tier class for display
+            });
+
+            table.innerHTML = html;
+            tableContainer.appendChild(table);
+        }
+    });
+</script>
+
+
+
+
+
+    <div id="benefitsOverview">
+        <h2>Benefits Overview</h2>
+        <div id="benefitsTable"></div>
+    </div>
+
+    </body>
+    </html>
