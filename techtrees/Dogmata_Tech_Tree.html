@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogmata Tech Tree</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        .pull-right {
+            float: right;
+        }
+        .tech-info {
+            margin: auto;
+            width: 90vw;
+            height: 10vh;
+            display: block;
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+            overflow-y: auto;
+        }
+        .tech-info a {
+            display: block;
+            line-height: 1;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #47A5DF;
+            color: white;
+            font-weight: bold;
+            line-height: 50px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            margin: auto;
+        }
+        .tech-info a:hover {
+            background-color: #005f87;
+        }
+        .tech-info .purchased {
+            background-color: gold;
+            color: black;
+        }
+        .tree-overflow {
+            height: 30vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tech-table th, .tech-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .tech-table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .tech-table td {
+            background-color: #f9f9f9;
+        }
+        .tech-table td.available {
+            background-color: #47A5DF;
+            color: white;
+        }
+        .tech-table td.purchased {
+            background-color: gold;
+            color: black;
+        }
+        .tech-table td.unavailable {
+            opacity: 0.5;
+        }
+        #benefitsTable {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #benefitsTable th, #benefitsTable td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        #benefitsTable th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body ng-app="app" ng-controller="techTree">
+    <p style="text-align: center;"><h1>Commander Tech Tree - Dogmata Elisabeth Vigée</h1></p>
+    <p><b>Instructions: double click to select an ability. Press the 'Buy!' button to unlock that ability.</b></p>
+    <div class="wrapper wrapper-fluid">
+        <div class="row">
+            <div class="tech-info">
+                <span class="pull-right">
+                    <span ng-show="showPurchased()" class="purchased">Purchased</span>
+                    <a href="" ng-click="buyTech()" ng-hide="hideBuyLink()">Buy!</a>
+                </span>
+                <h5>{{techName}}</h5>
+                <em>{{techDesc}}</em>
+            </div>
+        </div>
+        <div class="tree-overflow btn">
+            <table class="tech-table">
+                <tr>
+                    <td colspan="3" ng-class="{ 'unavailable' : !checkAvailability(mainBranch[0]) }">
+                        <input type="radio" name="tech" id="main1" ng-disabled="disableBtn(mainBranch[0])">
+                        <label for="main1" ng-class="{ 'available' : checkAvailability(mainBranch[0]), 'purchased': isOwned(mainBranch[0]) }" ng-click="showInfo(mainBranch[0])">Spray and Pray<br>(weight 1)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(focusedFireBranch[0]) }">
+                        <input type="radio" name="tech" id="focused1" ng-disabled="disableBtn(focusedFireBranch[0])">
+                        <label for="focused1" ng-class="{ 'available' : checkAvailability(focusedFireBranch[0]), 'purchased': isOwned(focusedFireBranch[0]) }" ng-click="showInfo(focusedFireBranch[0])">Focused Fire<br>(weight 2)</label>
+                    </td>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(torrentialExpertsBranch[0]) }">
+                        <input type="radio" name="tech" id="torrent1" ng-disabled="disableBtn(torrentialExpertsBranch[0])">
+                        <label for="torrent1" ng-class="{ 'available' : checkAvailability(torrentialExpertsBranch[0]), 'purchased': isOwned(torrentialExpertsBranch[0]) }" ng-click="showInfo(torrentialExpertsBranch[0])">Torrential Experts<br>(weight 3)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(meltCoverBranch[0]) }">
+                        <input type="radio" name="tech" id="meltCover" ng-disabled="disableBtn(meltCoverBranch[0])">
+                        <label for="meltCover" ng-class="{ 'available' : checkAvailability(meltCoverBranch[0]), 'purchased': isOwned(meltCoverBranch[0]) }" ng-click="showInfo(meltCoverBranch[0])">Melt their cover!<br>(needs 2, weight 4)</label>
+                    </td>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(burnWitchesBranch[0]) }">
+                        <input type="radio" name="tech" id="burnWitches1" ng-disabled="disableBtn(burnWitchesBranch[0])">
+                        <label for="burnWitches1" ng-class="{ 'available' : checkAvailability(burnWitchesBranch[0]), 'purchased': isOwned(burnWitchesBranch[0]) }" ng-click="showInfo(burnWitchesBranch[0])">Burn their witches!<br>(needs 2 or 3, weight 5)</label>
+                    </td>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(promethiumCanistersBranch[0]) }">
+                        <input type="radio" name="tech" id="promethiumCanisters" ng-disabled="disableBtn(promethiumCanistersBranch[0])">
+                        <label for="promethiumCanisters" ng-class="{ 'available' : checkAvailability(promethiumCanistersBranch[0]), 'purchased': isOwned(promethiumCanistersBranch[0]) }" ng-click="showInfo(promethiumCanistersBranch[0])">Blessed Promethium Canisters<br>(needs 3, weight 6)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(meltaCellsBranch[0]) }">
+                        <input type="radio" name="tech" id="meltaCells" ng-disabled="disableBtn(meltaCellsBranch[0])">
+                        <label for="meltaCells" ng-class="{ 'available' : checkAvailability(meltaCellsBranch[0]), 'purchased': isOwned(meltaCellsBranch[0]) }" ng-click="showInfo(meltaCellsBranch[0])">Overcharged Melta Cells<br>(needs 4, weight 7)</label>
+                    </td>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(meltaBarrelsBranch[0]) }">
+                        <input type="radio" name="tech" id="meltaBarrels" ng-disabled="disableBtn(meltaBarrelsBranch[0])">
+                        <label for="meltaBarrels" ng-class="{ 'available' : checkAvailability(meltaBarrelsBranch[0]), 'purchased': isOwned(meltaBarrelsBranch[0]) }" ng-click="showInfo(meltaBarrelsBranch[0])">Improved Melta Barrels<br>(needs 4 or 5, weight 8)</label>
+                    </td>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(wildfireBranch[0]) }">
+                        <input type="radio" name="tech" id="wildfire" ng-disabled="disableBtn(wildfireBranch[0])">
+                        <label for="wildfire" ng-class="{ 'available' : checkAvailability(wildfireBranch[0]), 'purchased': isOwned(wildfireBranch[0]) }" ng-click="showInfo(wildfireBranch[0])">Fear spreads like Wildfire<br>(needs 5 or 6, weight 9)</label>
+                    </td>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(hasteAflameBranch[0]) }">
+                        <input type="radio" name="tech" id="hasteAflame" ng-disabled="disableBtn(hasteAflameBranch[0])">
+                        <label for="hasteAflame" ng-class="{ 'available' : checkAvailability(hasteAflameBranch[0]), 'purchased': isOwned(hasteAflameBranch[0]) }" ng-click="showInfo(hasteAflameBranch[0])">Haste Aflame!<br>(needs 6, weight 10)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(enhancedVisorsBranch[0]) }">
+                        <input type="radio" name="tech" id="enhancedVisors" ng-disabled="disableBtn(enhancedVisorsBranch[0])">
+                        <label for="enhancedVisors" ng-class="{ 'available' : checkAvailability(enhancedVisorsBranch[0]), 'purchased': isOwned(enhancedVisorsBranch[0]) }" ng-click="showInfo(enhancedVisorsBranch[0])">Enhanced Visors<br>(needs 7 or 8, weight 11)</label>
+                    </td>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(refractorFieldsBranch[0]) }">
+                        <input type="radio" name="tech" id="refractorFields" ng-disabled="disableBtn(refractorFieldsBranch[0])">
+                        <label for="refractorFields" ng-class="{ 'available' : checkAvailability(refractorFieldsBranch[0]), 'purchased': isOwned(refractorFieldsBranch[0]) }" ng-click="showInfo(refractorFieldsBranch[0])">Overload Refractor Fields<br>(needs 8 or 9, weight 12)</label>
+                    </td>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(sunburstPromethiumBranch[0]) }">
+                        <input type="radio" name="tech" id="sunburstPromethium" ng-disabled="disableBtn(sunburstPromethiumBranch[0])">
+                        <label for="sunburstPromethium" ng-class="{ 'available' : checkAvailability(sunburstPromethiumBranch[0]), 'purchased': isOwned(sunburstPromethiumBranch[0]) }" ng-click="showInfo(sunburstPromethiumBranch[0])">Sunburst Promethium<br>(needs 9 or 10, weight 13)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(dropOffDelimitersBranch[0]) }">
+                        <input type="radio" name="tech" id="dropOffDelimiters" ng-disabled="disableBtn(dropOffDelimitersBranch[0])">
+                        <label for="dropOffDelimiters" ng-class="{ 'available' : checkAvailability(dropOffDelimitersBranch[0]), 'purchased': isOwned(dropOffDelimitersBranch[0]) }" ng-click="showInfo(dropOffDelimitersBranch[0])">Drop-off Delimiters<br>(needs 11 or 12, weight 14)</label>
+                    </td>
+                    <td ng-class="{ 'unavailable' : !checkAvailability(closeRangePurgingBranch[0]) }">
+                        <input type="radio" name="tech" id="closeRangePurging" ng-disabled="disableBtn(closeRangePurgingBranch[0])">
+                        <label for="closeRangePurging" ng-class="{ 'available' : checkAvailability(closeRangePurgingBranch[0]), 'purchased': isOwned(closeRangePurgingBranch[0]) }" ng-click="showInfo(closeRangePurgingBranch[0])">Close-Range Purging<br>(needs 12 or 13, weight 15)</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="benefitsOverview">
+        <h2>Benefits Overview</h2>
+        <div id="benefitsTable"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller('techTree', ['$scope', function($scope) {
+            $scope.mainBranch = [
+                { name: 'Spray and Pray', description: 'You can use the Overwatch-Stratagem for free once per game, even if you have used it in that phase.', id: 'main1', cost: 1, available: function() { return true; }, owned: false }
+            ];
+            $scope.focusedFireBranch = [
+                { name: 'Focused Fire', description: 'One unit in your army can have the [melta-1] ability on one of their weapons. For example: A unit has 5 Storm Bolters, if you choose this weapon as a target for this ability, all Storm Bolters in that unit have [melta-1].', id: 'focused1', cost: 1, available: function() { return $scope.mainBranch[0].owned; }, owned: false }
+            ];
+            $scope.torrentialExpertsBranch = [
+                { name: 'Torrential Experts', description: 'One unit in your army can have the [torrent] ability on one of their weapons. For example: A unit has 5 Storm Bolters, if you choose this weapon as a target for this ability, all Storm Bolters in that unit have [torrent].', id: 'torrent1', cost: 1, available: function() { return $scope.mainBranch[0].owned; }, owned: false }
+            ];
+            $scope.meltCoverBranch = [
+                { name: 'Melt their cover!', description: 'Description of Melt their cover!', id: 'meltCover', cost: 1, available: function() { return $scope.focusedFireBranch[0].owned; }, owned: false }
+            ];
+            $scope.burnWitchesBranch = [
+                { name: 'Burn their witches!', description: 'Description of Burn their witches!', id: 'burnWitches1', cost: 1, available: function() { return $scope.focusedFireBranch[0].owned || $scope.torrentialExpertsBranch[0].owned; }, owned: false }
+            ];
+            $scope.promethiumCanistersBranch = [
+                { name: 'Blessed Promethium Canisters', description: 'Description of Blessed Promethium Canisters', id: 'promethiumCanisters', cost: 1, available: function() { return $scope.torrentialExpertsBranch[0].owned; }, owned: false }
+            ];
+            $scope.meltaCellsBranch = [
+                { name: 'Overcharged Melta Cells', description: 'Description of Overcharged Melta Cells', id: 'meltaCells', cost: 1, available: function() { return $scope.meltCoverBranch[0].owned; }, owned: false }
+            ];
+            $scope.meltaBarrelsBranch = [
+                { name: 'Improved Melta Barrels', description: 'Description of Improved Melta Barrels', id: 'meltaBarrels', cost: 1, available: function() { return $scope.meltCoverBranch[0].owned || $scope.burnWitchesBranch[0].owned; }, owned: false }
+            ];
+            $scope.wildfireBranch = [
+                { name: 'Fear spreads like Wildfire', description: 'Description of Fear spreads like Wildfire', id: 'wildfire', cost: 1, available: function() { return $scope.burnWitchesBranch[0].owned || $scope.promethiumCanistersBranch[0].owned; }, owned: false }
+            ];
+            $scope.hasteAflameBranch = [
+                { name: 'Haste Aflame!', description: 'Description of Haste Aflame!', id: 'hasteAflame', cost: 1, available: function() { return $scope.promethiumCanistersBranch[0].owned; }, owned: false }
+            ];
+            $scope.enhancedVisorsBranch = [
+                { name: 'Enhanced Visors', description: 'Description of Enhanced Visors', id: 'enhancedVisors', cost: 1, available: function() { return $scope.meltaCellsBranch[0].owned || $scope.meltaBarrelsBranch[0].owned; }, owned: false }
+            ];
+            $scope.refractorFieldsBranch = [
+                { name: 'Overload Refractor Fields', description: 'Description of Overload Refractor Fields', id: 'refractorFields', cost: 1, available: function() { return $scope.meltaBarrelsBranch[0].owned || $scope.wildfireBranch[0].owned; }, owned: false }
+            ];
+            $scope.sunburstPromethiumBranch = [
+                { name: 'Sunburst Promethium', description: 'Description of Sunburst Promethium', id: 'sunburstPromethium', cost: 1, available: function() { return $scope.wildfireBranch[0].owned || $scope.hasteAflameBranch[0].owned; }, owned: false }
+            ];
+            $scope.dropOffDelimitersBranch = [
+                { name: 'Drop-off Delimiters', description: 'Description of Drop-off Delimiters', id: 'dropOffDelimiters', cost: 1, available: function() { return $scope.enhancedVisorsBranch[0].owned || $scope.refractorFieldsBranch[0].owned; }, owned: false }
+            ];
+            $scope.closeRangePurgingBranch = [
+                { name: 'Close-Range Purging', description: 'Description of Close-Range Purging', id: 'closeRangePurging', cost: 1, available: function() { return $scope.refractorFieldsBranch[0].owned || $scope.sunburstPromethiumBranch[0].owned; }, owned: false }
+            ];
+
+            $scope.obj = null;
+            $scope.techName = 'Select a technology to see details';
+            $scope.techDesc = '';
+            $scope.techCost;
+
+            $scope.disableBtn = function(obj) {
+                if (!$scope.checkAvailability(obj) && $scope.isOwned(obj)) {
+                    return false;
+                } else if (!$scope.checkAvailability(obj)) {
+                    return true;
+                }
+                return false;
+            };
+
+            $scope.isOwned = function(obj) {
+                return obj.owned ? true : false;
+            };
+
+            $scope.checkAvailability = function(obj) {
+                return obj.available() && obj.owned === false ? true : false;
+            };
+
+            $scope.showPurchased = function() {
+                if ($scope.obj === null) {
+                    return false;
+                }
+                return $scope.obj.owned ? true : false;
+            };
+
+            $scope.hideBuyLink = function() {
+                if ($scope.obj === null) {
+                    return true;
+                }
+                return $scope.obj.owned ? true : false;
+            };
+
+            $scope.buyTech = function() {
+                $scope.obj.owned = true;
+                generateBenefitsTable();
+            };
+
+            $scope.showInfo = function(obj) {
+                if (obj.available()) {
+                    $scope.obj = obj;
+                    $scope.techName = obj.name;
+                    $scope.techDesc = obj.description;
+                    $scope.techCost = obj.cost;
+                }
+            };
+
+            function generateBenefitsTable() {
+                const tableContainer = document.getElementById('benefitsTable');
+                tableContainer.innerHTML = ''; 
+                
+                const table = document.createElement('table');
+                table.style.width = '100%';
+                table.setAttribute('border', '1');
+                
+                let html = '<tr><th>Tier</th><th>Selected Traits and Effects</th></tr>';
+                const selectedTraits = getSelectedTraits();
+                Object.keys(selectedTraits).forEach(tier => {
+                    const capitalizedTierName = tier.replace(/\b\w/g, char => char.toUpperCase()); 
+                    const selectedTraitsList = selectedTraits[tier].join('<br><br>'); 
+                    html += `<tr><td><strong>${capitalizedTierName.replace(/\-/g, ' ').replace('Tier', 'Tier ')}</strong></td><td>${selectedTraitsList}</td></tr>`;
+                });
+
+                table.innerHTML = html;
+                tableContainer.appendChild(table);
+            }
+
+            function getSelectedTraits() {
+                const selectedTraits = {};
+                [...$scope.mainBranch, ...$scope.focusedFireBranch, ...$scope.torrentialExpertsBranch, ...$scope.meltCoverBranch, ...$scope.burnWitchesBranch, ...$scope.promethiumCanistersBranch, ...$scope.meltaCellsBranch, ...$scope.meltaBarrelsBranch, ...$scope.wildfireBranch, ...$scope.hasteAflameBranch, ...$scope.enhancedVisorsBranch, ...$scope.refractorFieldsBranch, ...$scope.sunburstPromethiumBranch, ...$scope.dropOffDelimitersBranch, ...$scope.closeRangePurgingBranch].forEach(branch => {
+                    if (branch.owned) {
+                        const tierClass = branch.name.toLowerCase().replace(/\s/g, '-');
+                        if (!selectedTraits[tierClass]) {
+                            selectedTraits[tierClass] = [];
+                        }
+                        selectedTraits[tierClass].push('<strong>' + branch.name + '</strong>: ' + branch.description);
+                    }
+                });
+                return selectedTraits;
+            }
+        }]);
+    </script>
+</body>
+</html>
